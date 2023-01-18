@@ -1,0 +1,18 @@
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Mariupol', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: gray;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
