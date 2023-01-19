@@ -4,12 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let button of buttons) {
         button.addEventListener("click", function () {
-            alert("TEST")
+
+            let weaponType = this.getAttribute("id")
+
+            runGame(weaponType)
+
         })
     }
 
 })
 
-
-
+function runGame(weaponType) {
+    let playerChoice = document.getElementById("player-choice")
+    playerChoice.setAttribute("src", `assets/images/${weaponType}.jpeg`)
+}
 

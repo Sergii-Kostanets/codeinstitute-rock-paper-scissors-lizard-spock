@@ -73,7 +73,7 @@ h2 {
     justify-content: space-evenly;
 }
 
-#rules {
+.rules {
     width: 30vw;
     height: 30vw;
     object-fit: contain;
