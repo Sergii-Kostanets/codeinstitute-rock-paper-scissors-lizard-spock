@@ -4,12 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/spoc-icon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Quick game!</title>
 </head>
 <body>
 
-    <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+    <header>
+        <h1>
+            <a href="index.html">Rock-Paper-Scissors-Lizard-Spock Game!</a>
+        </h1>
+    </header>
+
+    <section>
+        <h2>Choose who you are!</h2>
+        <div class="player-weapon">
+            <button class="player-weapon-choose" id="rock">
+                <img class="weapon" src="assets/images/rock.jpeg" alt="Rock">
+            </button>
+            <button class="player-weapon-choose" id="paper">
+                <img src="assets/images/paper.jpeg" alt="Paper" class="weapon">
+            </button>
+            <button class="player-weapon-choose" id="scissors">
+                <img src="assets/images/scissors.jpeg" alt="Scissors" class="weapon">
+            </button>
+            <button class="player-weapon-choose" id="lizard">
+                <img src="assets/images/lizard.jpeg" alt="Lizard" class="weapon">
+            </button>
+            <button class="player-weapon-choose" id="spock">
+                <img src="assets/images/spoc.jpeg" alt="Spock" class="weapon">
+            </button>
+        </div>
+        <div class="comparing">
+            <div class="comparing-player">
+                <img id="rules" src="assets/images/rules.png" alt="Diagram of Rock-Paper-Scissors-Lizard-Spock game rules">
+            </div>
+            <div class="comparing-score">
+                <p>You</p>
+                <p id="player-score">0</p>
+                <!-- <p>vs</p> -->
+                <p>AI</p>
+                <p id="computer-score">0</p>
+            </div>
+            <div class="comparing-computer">
+                <img id="rules" src="assets/images/rules.png" alt="Diagram of Rock-Paper-Scissors-Lizard-Spock game rules">
+            </div>
+        </div>
+        <p id="result">Click on the one of the green signs to start the game</p>
+        <p id="process">The result of the round will apper here</p>
+    </section>
+
+    <footer>
+        <div class="contacts">
+            <a href="https://www.linkedin.com/in/sergiikostanets/" target="_blank">Sergii Kostanets</a>
+        </div>
+        <div class="contacts">
+            <a href="tel:+353852006030">+353 85 200 60 30</a>
+        </div>
+        <div class="contacts">
+            <a href="https://github.com/Sergii-Kostanets" target="_blank">GitHub</a>
+        </div>
+        <div class="contacts">
+            <a href="https://www.instagram.com/sergiikostanets" target="_blank">Instagram</a>
+        </div>
+    </footer>
 
     <script src="assets/js/script.js"></script>
 

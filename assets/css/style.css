@@ -4,15 +4,127 @@
     margin: 0;
     padding: 0;
     border: none;
-    font-family: 'Mariupol', Arial, Helvetica, sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: normal;
 }
 
 body {
     box-sizing: border-box;
-    background-color: gray;
-    color: black;
+    background-color: #d4e4ff;
+    color: #ffdd54;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+header {
+    background-color: #e481ff;
+    padding: 1vh 1vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+h1>a {
+    color: #ffdd54;
+    text-decoration: none;
+}
+
+h1>a:hover {
+    color: #d6f4d6;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    color: #225763;
+    font-size: 2rem;
+    margin-bottom: 3vh;
+}
+
+.player-weapon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 3vh;
+}
+
+.player-weapon-choose {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.weapon {
+    width: 5rem;
+    height: 5rem;
+}
+
+.comparing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#rules {
+    width: 30vw;
+    height: 30vw;
+    object-fit: contain;
+}
+
+.comparing-score {
+    display: flex;
+    flex-direction: column;
+    margin: auto 2vw;
+}
+
+.comparing-score>p {
+    color: #225763;
+    text-align: center;
+    font-size: 2rem;
+    margin: 5px 3px;
+}
+
+#player-score {
+    color: #86de86;
+}
+
+#computer-score {
+    color: #ff8080;
+}
+
+#result,
+#process {
+    margin: 5px auto;
+    color: #225763;
+}
+
+footer {
+    background-color:#e481ff;
+    padding: 1vh 1vh;
+    margin-top: auto;
+    line-height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.contacts {
+    font-size: 1.5rem;
+}
+
+.contacts>a {
+    color: #ffdd54;
+    text-decoration: none;
+}
+
+.contacts>a:hover {
+    color: #d6f4d6;
 }
