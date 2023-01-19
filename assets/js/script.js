@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             runGame(weaponType)
 
-            checkWinner()
+            // checkWinner()
 
         })
     }
@@ -33,15 +33,33 @@ function runGame(weaponType) {
         computerChoice.setAttribute("alt", `${ai}`)
     }, 500)
 
+    let result = checkWinner(playerChoice, computerChoice)
+
 }
 
-function checkWinner() {
+function checkWinner(pChoice, cChoice) {
 
-    let playerChoice = document.getElementById("player-choice").getAttribute("alt")
-    console.log(playerChoice)
+    let player = pChoice.getAttribute("alt")
+    console.log("You chose: ", player)
     setTimeout(function () {
-        let computerChoice = document.getElementById("computer-choice").getAttribute("alt")
-        console.log(computerChoice)
+        let computer = cChoice.getAttribute("alt")
+        console.log("AI chose: ", computer)
+
+        switch (player) {
+            case "rock":
+
+                if (computer === "scissors") {
+                    document.getElementById("result").innerHTML = "You WON!"
+
+                } else {
+
+                }
+
+                break;
+
+            default:
+                break;
+        }
     }, 501)
 
 
