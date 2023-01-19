@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             runGame(weaponType)
 
-            computerMove()
-
-
+            checkWinner()
 
         })
     }
@@ -24,14 +22,27 @@ function runGame(weaponType) {
 
     let playerChoice = document.getElementById("player-choice")
     playerChoice.setAttribute("src", `assets/images/${weaponType}.jpeg`)
-
-}
-
-function computerMove() {
+    playerChoice.setAttribute("alt", `${weaponType}`)
 
     let ai = Math.floor(Math.random() * 5)
     ai = choice[ai]
     let computerChoice = document.getElementById("computer-choice")
-    computerChoice.setAttribute("src", `assets/images/${ai}.jpeg`)
+
+    setTimeout(function () {
+        computerChoice.setAttribute("src", `assets/images/${ai}.jpeg`)
+        computerChoice.setAttribute("alt", `${ai}`)
+    }, 500)
+
+}
+
+function checkWinner() {
+
+    let playerChoice = document.getElementById("player-choice").getAttribute("alt")
+    console.log(playerChoice)
+    setTimeout(function () {
+        let computerChoice = document.getElementById("computer-choice").getAttribute("alt")
+        console.log(computerChoice)
+    }, 501)
+
 
 }
