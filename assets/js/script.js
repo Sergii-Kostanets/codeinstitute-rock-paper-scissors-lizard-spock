@@ -35,7 +35,7 @@ function runGame(weaponType) {
         computerChoice.setAttribute("src", `assets/images/${ai}.jpeg`)
         computerChoice.setAttribute("alt", `${ai}`)
 
-    }, 500)
+    }, 300)
 
     let result = checkWinner(playerChoice, computerChoice)
 
@@ -194,7 +194,7 @@ function checkWinner(pChoice, cChoice) {
 
         }
 
-    }, 501)
+    }, 301)
 
 }
 
@@ -222,8 +222,8 @@ function addComputerScore() {
 
 function endPlayerGame() {
     document.getElementsByTagName("body")[0].style.backgroundColor = "#d6f4d6"
-    document.getElementsByTagName("h2")[0].innerText = "Congratulations, you won the game!"
-    document.getElementsByClassName("player-weapon")[0].innerText = "Live long and prosper! New game will start shortly."
+    document.getElementsByTagName("h2")[0].innerHTML = "<h2>Congratulations, you won the game!</h2>"
+    document.getElementsByClassName("player-weapon")[0].innerHTML = "Live long and prosper!<br>New game will start shortly."
     setTimeout(function () {
         location.reload();
     }, 6000);
@@ -231,8 +231,8 @@ function endPlayerGame() {
 
 function endComputerGame() {
     document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4"
-    document.getElementsByTagName("h2")[0].innerText = "You lose the game!"
-    document.getElementsByClassName("player-weapon")[0].innerText = "Try again! New game will start shortly."
+    document.getElementsByTagName("h2")[0].innerHTML = "<h2>You lose the game!</h2>"
+    document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly."
     setTimeout(function () {
         location.reload();
     }, 6000);
