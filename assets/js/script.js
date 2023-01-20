@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             runGame(weaponType)
 
+            timer()
+
         })
 
     }
@@ -221,19 +223,53 @@ function addComputerScore() {
 }
 
 function endPlayerGame() {
+
+    document.getElementsByClassName("comparing-score")[0].style.display = "none"
+    document.getElementById("timer").remove()
     document.getElementsByTagName("body")[0].style.backgroundColor = "#d6f4d6"
     document.getElementsByTagName("h2")[0].innerHTML = "<h2>Congratulations, you won the game!</h2>"
     document.getElementsByClassName("player-weapon")[0].innerHTML = "Live long and prosper!<br>New game will start shortly."
     setTimeout(function () {
         location.reload();
     }, 6000);
+
 }
 
 function endComputerGame() {
+
+    document.getElementsByClassName("comparing-score")[0].style.display = "none"
+    document.getElementById("timer").remove()
     document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4"
     document.getElementsByTagName("h2")[0].innerHTML = "<h2>You lose the game!</h2>"
     document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly."
     setTimeout(function () {
         location.reload();
     }, 6000);
+
+}
+
+function timer() {
+
+    let time = parseInt(document.getElementById("timer").innerText)
+    let timer = setInterval(function(){
+        time--;
+        document.getElementById("timer").textContent = time;
+        if (time <= 0) {
+            clearInterval(timer);
+            timeIsUp()
+        }
+    }, 1000);
+
+}
+
+function timeIsUp() {
+
+    score = "none"
+    document.getElementsByTagName("h2")[0].innerHTML = "<h2>Time's up!</h2>"
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4"
+    document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly."
+    setTimeout(function () {
+        location.reload();
+    }, 6000);
+
 }
