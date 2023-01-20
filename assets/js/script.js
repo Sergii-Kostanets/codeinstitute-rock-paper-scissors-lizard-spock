@@ -55,24 +55,24 @@ function checkWinner(pChoice, cChoice) {
             case "rock":
 
                 if (computer === "scissors") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because rock crushes scissors!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Rock crushes scissors!"
                     addPlayerScore()
                 } else if (computer === "lizard") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because rock crushes lizard!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Rock crushes lizard!"
                     addPlayerScore()
                 } else if (computer === player) {
-                    result.innerHTML = "Draw,"
-                    process.innerHTML = `because ${computer} equal to ${player}.`
+                    result.innerHTML = "Draw"
+                    process.innerHTML = `Rock equal to ${player}.`
                 } else {
                     result.innerHTML = "You lose!"
 
                     if (computer === "spock") {
-                        process.innerHTML = "because Spock vaporizes rock!"
+                        process.innerHTML = `Spock vaporizes ${player}!`
                         addComputerScore()
                     } else {
-                        process.innerHTML = "because paper covers rock!"
+                        process.innerHTML = `Paper covers ${player}!`
                         addComputerScore()
                     }
 
@@ -83,24 +83,24 @@ function checkWinner(pChoice, cChoice) {
             case "paper":
 
                 if (computer === "rock") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because paper covers rock!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Paper covers rock!"
                     addPlayerScore()
                 } else if (computer === "spock") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because paper disproves Spock!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Paper disproves Spock!"
                     addPlayerScore()
                 } else if (computer === player) {
                     result.innerHTML = "Draw"
-                    process.innerHTML = `because ${computer} equal to ${player}.`
+                    process.innerHTML = `Paper equal to ${player}.`
                 } else {
                     result.innerHTML = "You lose!"
 
                     if (computer === "lizard") {
-                        process.innerHTML = "because lizard eats paper!"
+                        process.innerHTML = `Lizard eats ${player}!`
                         addComputerScore()
                     } else {
-                        process.innerHTML = "because scissors cuts paper!"
+                        process.innerHTML = `Scissors cuts ${player}!`
                         addComputerScore()
                     }
 
@@ -111,24 +111,24 @@ function checkWinner(pChoice, cChoice) {
             case "scissors":
 
                 if (computer === "lizard") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because scissors decapitates lizard!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Scissors decapitates lizard!"
                     addPlayerScore()
                 } else if (computer === "paper") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because scissors cuts paper!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Scissors cuts paper!"
                     addPlayerScore()
                 } else if (computer === player) {
                     result.innerHTML = "Draw"
-                    process.innerHTML = `because ${computer} equal to ${player}.`
+                    process.innerHTML = `Scissors equal to ${player}.`
                 } else {
                     result.innerHTML = "You lose!"
 
                     if (computer === "spock") {
-                        process.innerHTML = "because Spock smashes scissors!"
+                        process.innerHTML = `Spock smashes ${player}!`
                         addComputerScore()
                     } else {
-                        process.innerHTML = "because rock crushes scissors!"
+                        process.innerHTML = `Rock crushes ${player}!`
                         addComputerScore()
                     }
 
@@ -139,24 +139,24 @@ function checkWinner(pChoice, cChoice) {
             case "lizard":
 
                 if (computer === "paper") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because lizard eats paper!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Lizard eats paper!"
                     addPlayerScore()
                 } else if (computer === "spock") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because lizard poisons Spock!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Lizard poisons Spock!"
                     addPlayerScore()
                 } else if (computer === player) {
                     result.innerHTML = "Draw"
-                    process.innerHTML = `because ${computer} equal to ${player}.`
+                    process.innerHTML = `Lizard equal to ${player}.`
                 } else {
                     result.innerHTML = "You lose!"
 
                     if (computer === "scissors") {
-                        process.innerHTML = "because scissors decapitates lizard!"
+                        process.innerHTML = `Scissors decapitates ${player}!`
                         addComputerScore()
                     } else {
-                        process.innerHTML = "because rock crushes lizard!"
+                        process.innerHTML = `Rock crushes ${player}!`
                         addComputerScore()
                     }
 
@@ -167,24 +167,24 @@ function checkWinner(pChoice, cChoice) {
             case "spock":
 
                 if (computer === "rock") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because Spock vaporizes rock!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Spock vaporizes rock!"
                     addPlayerScore()
                 } else if (computer === "scissors") {
-                    result.innerHTML = "You won,"
-                    process.innerHTML = "because Spock smashes scissors!"
+                    result.innerHTML = "You won!"
+                    process.innerHTML = "Spock smashes scissors!"
                     addPlayerScore()
                 } else if (computer === player) {
                     result.innerHTML = "Draw"
-                    process.innerHTML = `because Spock equal to Spock.`
+                    process.innerHTML = `Spock equal to Spock.`
                 } else {
                     result.innerHTML = "You lose!"
 
                     if (computer === "scissors") {
-                        process.innerHTML = "because lizard poisons Spock!"
+                        process.innerHTML = "Lizard poisons Spock!"
                         addComputerScore()
                     } else {
-                        process.innerHTML = "because paper disproves Spock!"
+                        process.innerHTML = "Paper disproves Spock!"
                         addComputerScore()
                     }
 
