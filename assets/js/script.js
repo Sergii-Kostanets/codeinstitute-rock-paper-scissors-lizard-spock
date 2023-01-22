@@ -1,7 +1,3 @@
-const choice = ["rock", "paper", "scissors", "lizard", "spock"]
-let result = document.getElementById("result")
-let process = document.getElementById("process")
-
 document.addEventListener("DOMContentLoaded", function () {
 
     let buttons = document.getElementsByTagName("button")
@@ -23,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 function runGame(weaponType) {
+
+    const choice = ["rock", "paper", "scissors", "lizard", "spock"]
 
     let playerChoice = document.getElementById("player-choice")
     playerChoice.setAttribute("src", `assets/images/${weaponType}.jpeg`)
@@ -46,6 +44,8 @@ function runGame(weaponType) {
 function checkWinner(pChoice, cChoice) {
 
     let player = pChoice.getAttribute("alt")
+    let process = document.getElementById("process")
+    let result = document.getElementById("result")
     console.log("You chose: ", player)
     setTimeout(function () {
 
