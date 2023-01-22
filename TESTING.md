@@ -25,7 +25,7 @@ The HTML validator results are below:
 
 The CSS validator results are below:
 
-![W3C CSS Validator test result](assets/images/readme-images/validate-css.png)
+![W3C CSS Validator test result](assets/images/readme-images/validate-css.jpeg)
 
 The JS validator results are below:
 
