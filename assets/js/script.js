@@ -1,79 +1,79 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    let buttons = document.getElementsByTagName("button")
+    let buttons = document.getElementsByTagName("button");
 
     for (let button of buttons) {
 
         button.addEventListener("click", function () {
 
-            let weaponType = this.getAttribute("id")
+            let weaponType = this.getAttribute("id");
 
-            runGame(weaponType)
+            runGame(weaponType);
 
-            timer()
+            timer();
 
-        })
+        });
 
     }
 
-})
+});
 
 function runGame(weaponType) {
 
-    const choice = ["rock", "paper", "scissors", "lizard", "spock"]
+    const choice = ["rock", "paper", "scissors", "lizard", "spock"];
 
-    let playerChoice = document.getElementById("player-choice")
-    playerChoice.setAttribute("src", `assets/images/${weaponType}.jpeg`)
-    playerChoice.setAttribute("alt", `${weaponType}`)
+    let playerChoice = document.getElementById("player-choice");
+    playerChoice.setAttribute("src", `assets/images/${weaponType}.jpeg`);
+    playerChoice.setAttribute("alt", `${weaponType}`);
 
-    let ai = Math.floor(Math.random() * 5)
-    ai = choice[ai]
-    let computerChoice = document.getElementById("computer-choice")
+    let ai = Math.floor(Math.random() * 5);
+    ai = choice[ai];
+    let computerChoice = document.getElementById("computer-choice");
 
     setTimeout(function () {
 
-        computerChoice.setAttribute("src", `assets/images/${ai}.jpeg`)
-        computerChoice.setAttribute("alt", `${ai}`)
+        computerChoice.setAttribute("src", `assets/images/${ai}.jpeg`);
+        computerChoice.setAttribute("alt", `${ai}`);
 
-    }, 300)
+    }, 300);
 
-    let result = checkWinner(playerChoice, computerChoice)
+    checkWinner(playerChoice, computerChoice);
 
 }
 
 function checkWinner(pChoice, cChoice) {
 
-    let player = pChoice.getAttribute("alt")
-    let process = document.getElementById("process")
-    let result = document.getElementById("result")
+    let player = pChoice.getAttribute("alt");
+    let process = document.getElementById("process");
+    let result = document.getElementById("result");
     setTimeout(function () {
 
-        let computer = cChoice.getAttribute("alt")
+        let computer = cChoice.getAttribute("alt");
 
         switch (player) {
 
             case "rock":
 
                 if (computer === "scissors") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Rock crushes scissors!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Rock crushes scissors!";
+                    addPlayerScore();
                 } else if (computer === "lizard") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Rock crushes lizard!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Rock crushes lizard!";
+                    addPlayerScore();
                 } else if (computer === player) {
-                    result.innerHTML = "Draw"
-                    process.innerHTML = `Rock equal to ${player}.`
+                    result.innerHTML = "Draw";
+                    process.innerHTML = `Rock equal to ${player}.`;
                 } else {
-                    result.innerHTML = "You lose!"
+                    result.innerHTML = "You lose!";
 
                     if (computer === "spock") {
-                        process.innerHTML = `Spock vaporizes ${player}!`
-                        addComputerScore()
+                        process.innerHTML = `Spock vaporizes ${player}!`;
+                        addComputerScore();
                     } else {
-                        process.innerHTML = `Paper covers ${player}!`
-                        addComputerScore()
+                        process.innerHTML = `Paper covers ${player}!`;
+                        addComputerScore();
                     }
 
                 }
@@ -83,25 +83,25 @@ function checkWinner(pChoice, cChoice) {
             case "paper":
 
                 if (computer === "rock") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Paper covers rock!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Paper covers rock!";
+                    addPlayerScore();
                 } else if (computer === "spock") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Paper disproves Spock!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Paper disproves Spock!";
+                    addPlayerScore();
                 } else if (computer === player) {
-                    result.innerHTML = "Draw"
-                    process.innerHTML = `Paper equal to ${player}.`
+                    result.innerHTML = "Draw";
+                    process.innerHTML = `Paper equal to ${player}.`;
                 } else {
-                    result.innerHTML = "You lose!"
+                    result.innerHTML = "You lose!";
 
                     if (computer === "lizard") {
-                        process.innerHTML = `Lizard eats ${player}!`
-                        addComputerScore()
+                        process.innerHTML = `Lizard eats ${player}!`;
+                        addComputerScore();
                     } else {
-                        process.innerHTML = `Scissors cuts ${player}!`
-                        addComputerScore()
+                        process.innerHTML = `Scissors cuts ${player}!`;
+                        addComputerScore();
                     }
 
                 }
@@ -111,25 +111,25 @@ function checkWinner(pChoice, cChoice) {
             case "scissors":
 
                 if (computer === "lizard") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Scissors decapitates lizard!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Scissors decapitates lizard!";
+                    addPlayerScore();
                 } else if (computer === "paper") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Scissors cuts paper!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Scissors cuts paper!";
+                    addPlayerScore();
                 } else if (computer === player) {
-                    result.innerHTML = "Draw"
-                    process.innerHTML = `Scissors equal to ${player}.`
+                    result.innerHTML = "Draw";
+                    process.innerHTML = `Scissors equal to ${player}.`;
                 } else {
-                    result.innerHTML = "You lose!"
+                    result.innerHTML = "You lose!";
 
                     if (computer === "spock") {
-                        process.innerHTML = `Spock smashes ${player}!`
-                        addComputerScore()
+                        process.innerHTML = `Spock smashes ${player}!`;
+                        addComputerScore();
                     } else {
-                        process.innerHTML = `Rock crushes ${player}!`
-                        addComputerScore()
+                        process.innerHTML = `Rock crushes ${player}!`;
+                        addComputerScore();
                     }
 
                 }
@@ -139,25 +139,25 @@ function checkWinner(pChoice, cChoice) {
             case "lizard":
 
                 if (computer === "paper") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Lizard eats paper!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Lizard eats paper!";
+                    addPlayerScore();
                 } else if (computer === "spock") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Lizard poisons Spock!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Lizard poisons Spock!";
+                    addPlayerScore();
                 } else if (computer === player) {
-                    result.innerHTML = "Draw"
-                    process.innerHTML = `Lizard equal to ${player}.`
+                    result.innerHTML = "Draw";
+                    process.innerHTML = `Lizard equal to ${player}.`;
                 } else {
-                    result.innerHTML = "You lose!"
+                    result.innerHTML = "You lose!";
 
                     if (computer === "scissors") {
-                        process.innerHTML = `Scissors decapitates ${player}!`
-                        addComputerScore()
+                        process.innerHTML = `Scissors decapitates ${player}!`;
+                        addComputerScore();
                     } else {
-                        process.innerHTML = `Rock crushes ${player}!`
-                        addComputerScore()
+                        process.innerHTML = `Rock crushes ${player}!`;
+                        addComputerScore();
                     }
 
                 }
@@ -167,25 +167,25 @@ function checkWinner(pChoice, cChoice) {
             case "spock":
 
                 if (computer === "rock") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Spock vaporizes rock!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Spock vaporizes rock!";
+                    addPlayerScore();
                 } else if (computer === "scissors") {
-                    result.innerHTML = "You won!"
-                    process.innerHTML = "Spock smashes scissors!"
-                    addPlayerScore()
+                    result.innerHTML = "You won!";
+                    process.innerHTML = "Spock smashes scissors!";
+                    addPlayerScore();
                 } else if (computer === player) {
-                    result.innerHTML = "Draw"
-                    process.innerHTML = `Spock equal to Spock.`
+                    result.innerHTML = "Draw";
+                    process.innerHTML = `Spock equal to Spock.`;
                 } else {
-                    result.innerHTML = "You lose!"
+                    result.innerHTML = "You lose!";
 
-                    if (computer === "scissors") {
-                        process.innerHTML = "Lizard poisons Spock!"
-                        addComputerScore()
+                    if (computer === "lizard") {
+                        process.innerHTML = "Lizard poisons Spock!";
+                        addComputerScore();
                     } else {
-                        process.innerHTML = "Paper disproves Spock!"
-                        addComputerScore()
+                        process.innerHTML = "Paper disproves Spock!";
+                        addComputerScore();
                     }
 
                 }
@@ -194,39 +194,39 @@ function checkWinner(pChoice, cChoice) {
 
         }
 
-    }, 301)
+    }, 301);
 
 }
 
 function addPlayerScore() {
 
-    let playerScore = parseInt(document.getElementById("player-score").innerText)
-    document.getElementById("player-score").innerText = ++playerScore
+    let playerScore = parseInt(document.getElementById("player-score").innerText);
+    document.getElementById("player-score").innerText = ++playerScore;
 
     if (playerScore === 10) {
-        endPlayerGame()
+        endPlayerGame();
     }
 
 }
 
 function addComputerScore() {
 
-    let computerScore = parseInt(document.getElementById("computer-score").innerText)
-    document.getElementById("computer-score").innerText = ++computerScore
+    let computerScore = parseInt(document.getElementById("computer-score").innerText);
+    document.getElementById("computer-score").innerText = ++computerScore;
 
     if (computerScore === 10) {
-        endComputerGame()
+        endComputerGame();
     }
 
 }
 
 function endPlayerGame() {
 
-    document.getElementsByClassName("comparing-score")[0].style.display = "none"
-    document.getElementById("timer").remove()
-    document.getElementsByTagName("body")[0].style.backgroundColor = "#d6f4d6"
-    document.getElementsByTagName("h2")[0].innerHTML = "<h2>Congratulations, you won the game!</h2>"
-    document.getElementsByClassName("player-weapon")[0].innerHTML = "Live long and prosper!<br>New game will start shortly."
+    document.getElementsByClassName("comparing-score")[0].style.display = "none";
+    document.getElementById("timer").remove();
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#d6f4d6";
+    document.getElementsByTagName("h2")[0].innerHTML = "<h2>Congratulations, you won the game!</h2>";
+    document.getElementsByClassName("player-weapon")[0].innerHTML = "Live long and prosper!<br>New game will start shortly.";
     setTimeout(function () {
         location.reload();
     }, 6000);
@@ -235,11 +235,11 @@ function endPlayerGame() {
 
 function endComputerGame() {
 
-    document.getElementsByClassName("comparing-score")[0].style.display = "none"
-    document.getElementById("timer").remove()
-    document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4"
-    document.getElementsByTagName("h2")[0].innerHTML = "<h2>You lose the game!</h2>"
-    document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly."
+    document.getElementsByClassName("comparing-score")[0].style.display = "none";
+    document.getElementById("timer").remove();
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4";
+    document.getElementsByTagName("h2")[0].innerHTML = "<h2>You lose the game!</h2>";
+    document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly.";
     setTimeout(function () {
         location.reload();
     }, 6000);
@@ -248,13 +248,13 @@ function endComputerGame() {
 
 function timer() {
 
-    let time = parseInt(document.getElementById("timer").innerText)
+    let time = parseInt(document.getElementById("timer").innerText);
     let timer = setInterval(function(){
         time--;
         document.getElementById("timer").textContent = time;
         if (time <= 0) {
             clearInterval(timer);
-            timeIsUp()
+            timeIsUp();
         }
     }, 1000);
 
@@ -262,10 +262,11 @@ function timer() {
 
 function timeIsUp() {
 
-    score = "none"
-    document.getElementsByTagName("h2")[0].innerHTML = "<h2>Time's up!</h2>"
-    document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4"
-    document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly."
+    document.getElementsByClassName("comparing-score")[0].style.display = "none";
+    document.getElementById("timer").remove();
+    document.getElementsByTagName("h2")[0].innerHTML = "<h2>Time's up!</h2>";
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4";
+    document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly.";
     setTimeout(function () {
         location.reload();
     }, 6000);
