@@ -46,11 +46,9 @@ function checkWinner(pChoice, cChoice) {
     let player = pChoice.getAttribute("alt")
     let process = document.getElementById("process")
     let result = document.getElementById("result")
-    console.log("You chose: ", player)
     setTimeout(function () {
 
         let computer = cChoice.getAttribute("alt")
-        console.log("AI chose: ", computer)
 
         switch (player) {
 
