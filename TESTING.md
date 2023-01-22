@@ -1,4 +1,6 @@
-# Contents
+# Rock, Paper, Scissors, Lizard, Spock
+
+## Contents
 
 * [**Testing**](<#testing>)
   * [**Code Validation**](<#code-validation>)
@@ -11,37 +13,29 @@
     * [Lighthouse](<#lighthouse>)
     * [Peer review](<#peer-review>)
 
-# Testing
+## Testing
 
-## Code Validation
+### Code Validation
 
-The [Photo Shoot Fans](https://sergii-kostanets.github.io/codeinstitute-photo-shoot-fans) site has be throughly tested. All the code has been run through the [W3C html Validator](https://validator.w3.org/) and the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Minor errors were found on the home and inspiration pages. After a fix and retest, no errors were returned for both.
+The [Rock-Paper-Scissors-Lizard-Spock Game](https://sergii-kostanets.github.io/codeinstitute-rock-paper-scissors-lizard-spock/) site has been throughly tested. All the code has been run through the [W3C HTML Validator](https://validator.w3.org/), the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and the [JS hint Validator](https://jshint.com/). Minor errors were found. After a fix and retest, no errors were returned.
 
-The HTML validator results for each page are below:
+The HTML validator results are below:
 
-* Home page
-
-![W3C Validator test result](assets/images/readme-images/validate-html-home.png)
-
-* Camera page
-
-![W3C Validator test result](assets/images/readme-images/validate-html-camera.png)
-
-* Request page
-
-![W3C Validator test result](assets/images/readme-images/validate-html-request.png)
-
-* Submit page
-
-![W3C Validator test result](assets/images/readme-images/validate-html-submit.png)
+![W3C HTML Validator test result](assets/images/readme-images/validate-html.png)
 
 The CSS validator results are below:
 
-![CSS Validator test result](assets/images/readme-images/validate-css.png)
+![W3C CSS Validator test result](assets/images/readme-images/validate-css.png)
+
+The JS validator results are below:
+
+![JS hint Validator test result](assets/images/readme-images/validate-js.png)
+
+There are loads of warnings, but no errors.
 
 [Back to top](<#contents>)
 
-## Responsivenes
+### Responsivenes
 
 * The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Am I Responsive](https://ui.dev/amiresponsive?url=https://sergii-kostanets.github.io/codeinstitute-photo-shoot-fans).
 
@@ -51,159 +45,46 @@ The CSS validator results are below:
     | Images | pass        | pass       | pass     | pass     | pass      | pass            | pass            |
     | Links  | pass        | pass       | pass     | pass     | pass      | pass            | pass            |
 
-    Note: On wide display types the section with main content of the site are restricted in width to 1500px. This helps the UX by not spreading the content too wide on the extra wide screens.
+[Back to top](<#contents>)
+
+* Website [Rock-Paper-Scissors-Lizard-Spock Game](https://sergii-kostanets.github.io/codeinstitute-rock-paper-scissors-lizard-spock/) has fully responsive design which looks amazing on any device, from widescreen monitors to the smallest mobile phone screens.
+
+    The responsiveness of the game:
+
+    ![Rock-Paper-Scissors-Lizard-Spock Game responsive design](assets/images/readme-images/responsive-design.png)
 
 [Back to top](<#contents>)
 
-* Website [Photo Shoot Fans](https://sergii-kostanets.github.io/codeinstitute-photo-shoot-fans) has fully responsive design which looks amazing on any device, from widescreen monitors to the smallest mobile phone screens.
+### Browser Compatibility
 
-    The responsiveness of the home page:
-
-    ![Photo Shoot Fans camera page responsive design](assets/images/readme-images/responsive-main-page.png)
-
-    The responsiveness of the camera page:
-
-    ![Photo Shoot Fans camera page responsive design](assets/images/readme-images/responsive-camera-page.png)
-
-    The responsiveness of the request page:
-
-    ![Photo Shoot Fans camera page responsive design](assets/images/readme-images/responsive-request-page.png)
-
-    The responsiveness of the submit page:
-
-    ![Photo Shoot Fans camera page responsive design](assets/images/readme-images/responsive-submit.png)
-
-    Page footer responsiveness:
-
-    ![Photo Shoot Fans footer responsive design](assets/images/readme-images/responsive-footer.png)
-
-[Back to top](<#contents>)
-
-## Browser Compatibility
-
-[Photo Shoot Fans](https://sergii-kostanets.github.io/codeinstitute-photo-shoot-fans) site was tested on the following browsers with no visible issues for the user.
+[Rock-Paper-Scissors-Lizard-Spock Game](https://sergii-kostanets.github.io/codeinstitute-rock-paper-scissors-lizard-spock/) site was tested on the following browsers with no visible issues for the user.
 Google Chrome, Opera, Microsoft Edge, Safari and Mozilla Firefox. Appearance, functionality and responsiveness were consistent throughout for a range of device sizes and browsers.
 
 [Back to top](<#contents>)
 
-## Known Bugs
+### Known Bugs
 
-* ### Resolved
+* #### Resolved
 
-  * Request page - failed to change the border color of the input when focusing on it.
-
-        Approach 1 (failed):
-
-        ![Form bug resolve approach 1](assets/images/readme-images/bug-form-1.png)
-
-        Approach 2 (failed):
-
-        ![Form bug resolve approach 2](assets/images/readme-images/bug-form-2.png)
-
-        Approach 3 (success):
-
-        ![Form bug resolve approach 3](assets/images/readme-images/bug-form-3.png)
-
-        Before setting a custom color, it is better to remove the standard browser behavior.
-
-  * Request page - failed to change the border color of the input when focusing on it.
-
-        Approach 1 (failed):
-
-        ![Form bug 2 resolve approach 1](assets/images/readme-images/bug-form-4.png)
-
-        Approach 2 (success):
-
-        ![Form bug 2 resolve approach 2](assets/images/readme-images/bug-form-5.png)
-
-        Adding padding fixed the issue.
+  * Adding a timer prevented the scoring section from being hidden after the game ended. The countdown continued.
+    * Approach 1:
+    Taking the timer out of the scoring zone.
+    * Approach 2 (chosen):
+    Deleting rather than hiding a section: ```document.getElementById("timer").remove();```
 
 [Back to top](<#contents>)
 
-* ### Unresolved
+* #### Unresolved
 
-  * The bug appears when scrolling with the trackpad on MacOS in the Firefox browser:
-
-        Header
-
-        ![Firefox bug 1](assets/images/readme-images/bug-body-firefox-1.png)
-
-        Footer
-
-        ![Firefox bug 2](assets/images/readme-images/bug-body-firefox-2.png)
-
-  * The bug appears when scrolling with the trackpad on MacOS in the Safari browser:
-
-        Header
-
-        ![Safari bug 1](assets/images/readme-images/bug-body-safari-1.png)
-
-        Footer
-
-        ![Safari bug 2](assets/images/readme-images/bug-body-safari-2.png)
-
-  * Expected behavior:
-
-        Header
-
-        ![Chrome 1](assets/images/readme-images/bug-body-chrome-2.png)
-
-        Footer
-
-        ![Chrome 2](assets/images/readme-images/bug-body-chrome-1.png)
-
-        Also alternative expected behavior: no scroll beyond the page.
-
-  * Planned solution:
-
-        Prescribing specific CSS settings for certain browsers.
-
-        With prefix:
-
-            1. For Firefox:
-
-            * {
-                -moz-overscroll-behavior: none;
-            }
-
-            2. For Safari, Chrome and Opera:
-
-            * {
-                -webkit-overscroll-behavior: none;
-            }
-
-        With @media rule:
-
-            1. For Firefox:
-
-            @-moz-document url-prefix() {
-                .ff {
-                    overscroll-behavior: none;
-                }
-            }
-
-            1. For Safari:
-
-            _::-webkit-full-page-media, _:future, :root .safari_only {
-                property: value;
-            }
-
-            or
-
-            @media not all and (min-resolution:.001dpcm) {
-                @media {
-                    .safari10 {
-                        color:#0000FF;
-                        background-color:#CCCCCC;
-                    }
-                }
-            }
+  * If the buttons are pressed too quickly, the symbol selection button may be pressed again after the end of the last round. As a result, there may be a discrepancy between winning or losing a game with an explanation of the results of the last round that was played when it should not have been.
+    * Approach 1:
+    Removing the character selection buttons or replacing with text did not help. The button can still be pressed an additional time after the end of the game.
 
 [Back to top](<#contents>)
 
-## Additional Testing
+### Additional Testing
 
-### Lighthouse
+#### Lighthouse
 
 The site was also tested using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome Developer Tools to test each of the pages for:
 
@@ -212,27 +93,15 @@ The site was also tested using [Google Lighthouse](https://developers.google.com
 * Best Practices - Site conforms to industry best practices.
 * SEO - Search engine optimisation. Is the site optimised for search engine result rankings.
 
-As an example the results for [Photo Shoot Fans](https://sergii-kostanets.github.io/codeinstitute-photo-shoot-fans) home page:
+As an example the results for [Rock-Paper-Scissors-Lizard-Spock Game](https://sergii-kostanets.github.io/codeinstitute-rock-paper-scissors-lizard-spock/) main page:
 
 ![Lighthouse home page test results](assets/images/readme-images/lighthouse-home.png)
 
-As an example the results for [Photo Shoot Fans](https://sergii-kostanets.github.io/codeinstitute-photo-shoot-fans) camera page::
-
-![Lighthouse camers page test results](assets/images/readme-images/lighthouse-camera.png)
-
-As an example the results for [Photo Shoot Fans](https://sergii-kostanets.github.io/codeinstitute-photo-shoot-fans) request page:
-
-![Lighthouse request page test results](assets/images/readme-images/lighthouse-request.png)
-
-As an example the results for [Photo Shoot Fans](https://sergii-kostanets.github.io/codeinstitute-photo-shoot-fans) submit page:
-
-![Lighthouse submit page test results](assets/images/readme-images/lighthouse-submit.png)
-
-This part of the testing process showed up that the site was slow to load, mainly due to the image sizes. All the images needed to be compressed before adding to the repository. Once this was done the performance went from ~60% to ~100%.
+This part of the testing process showed up that the site was slow to load, mainly due to the image sizes. All the images needed to be compressed before adding to the repository. Once this was done the performance went from ~80% to ~100%.
 
 [Back to top](<#contents>)
 
-### Peer review
+#### Peer review
 
 In addition to the above testing the beta version of the site was put through its paces by peers, both in the software development field and outside. The results highlighted responsive design weakness for a type of mobile device that was rectified with minor CSS amendments. There were also minor spelling and grammar errors that have since been fixed.
 

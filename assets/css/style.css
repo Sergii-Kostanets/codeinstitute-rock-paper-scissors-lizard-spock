@@ -23,6 +23,13 @@ footer {
     padding: 5px 10px;
 }
 
+h1>a:hover,
+.contacts>a:hover {
+    color: #ffdd54;
+}
+
+/* Header */
+
 h1 {
     text-align: center;
     font-size: 32px;
@@ -33,10 +40,7 @@ h1>a {
     text-decoration: none;
 }
 
-h1>a:hover,
-.contacts>a:hover {
-    color: #ffdd54;
-}
+/* Section */
 
 section {
     margin: auto;
@@ -128,6 +132,8 @@ section>p {
     text-align: center;
 }
 
+/* Footer */
+
 footer {
     margin-top: auto;
     display: flex;
@@ -155,6 +161,10 @@ footer>div {
     color: #80b3ff;
 }
 
+/* Responsiveness */
+
+/* Large devices */
+
 @media (max-width: 800px) {
 
     .rules {
@@ -170,6 +180,8 @@ footer>div {
     }
 
 }
+
+/* Medium devices */
 
 @media (max-width: 666px) {
 
@@ -213,6 +225,8 @@ footer>div {
 
 }
 
+/* Small devices */
+
 @media (max-width: 490px) {
 
     h1 {
@@ -238,6 +252,8 @@ footer>div {
     }
 
 }
+
+/* Extra small devices */
 
 @media (max-width: 374px) {
 
