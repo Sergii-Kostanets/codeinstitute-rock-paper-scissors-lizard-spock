@@ -1,3 +1,4 @@
+let timerValue;
 let timerPlace = document.getElementById("timer");
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -40,8 +41,6 @@ function runGame(weaponType) {
         computerChoice.setAttribute("alt", `${ai}`);
 
     }, 300);
-
-    // timer = timerStart();
 
     checkWinner(playerChoice, computerChoice);
 
@@ -241,6 +240,7 @@ function addComputerScore() {
  * Stop the game if player got score 10 before computer in time.
  */
 function endPlayerGame() {
+    clearInterval(timerValue);
 
     clearInterval(timer);
     document.getElementsByClassName("comparing-score")[0].style.display = "none";
@@ -258,6 +258,7 @@ function endPlayerGame() {
  * Stop the game if computer got score 10 before player in time.
  */
 function endComputerGame() {
+    clearInterval(timerValue);
 
     clearInterval(timer);
     document.getElementsByClassName("comparing-score")[0].style.display = "none";
@@ -291,11 +292,13 @@ function timeIsUp() {
  * Countdown till game ends.
  */
 function timer() {
-
     let time = parseInt(document.getElementById("timer").innerText);
-    if (time > 0 || time === true) {
+    let playerScore = parseInt(document.getElementById('player-score').innerText)
+    let computerScore = parseInt(document.getElementById('computer-score').innerText)
 
-        let timerValue = setInterval(function(){
+    if (time === 30 && playerScore === 0 && computerScore === 0) {
+
+        timerValue = setInterval(function () {
             time--;
             timerPlace.innerHTML = time;
             if (time <= 0) {
@@ -303,6 +306,6 @@ function timer() {
                 timeIsUp();
             }
         }, 1000);
-
     }
+
 }
