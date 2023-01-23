@@ -3,16 +3,12 @@ let timerPlace = document.getElementById("timer");
 document.addEventListener("DOMContentLoaded", function () {
 
     let buttons = document.getElementsByTagName("button");
-
     for (let button of buttons) {
 
         button.addEventListener("click", function () {
 
             let weaponType = this.getAttribute("id");
-
             runGame(weaponType);
-
-            timer();
 
         });
 
@@ -20,7 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/**
+ * Start game with the first choice of the player. Takes parameter of the choice.
+ * @param {*} weaponType
+ */
 function runGame(weaponType) {
+
+    timer();
 
     const choice = ["rock", "paper", "scissors", "lizard", "spock"];
 
@@ -39,10 +41,17 @@ function runGame(weaponType) {
 
     }, 300);
 
+    // timer = timerStart();
+
     checkWinner(playerChoice, computerChoice);
 
 }
 
+/**
+ * Compearing choices of player and computer and shows result of the round.
+ * @param {*} pChoice - player choice.
+ * @param {*} cChoice - computer choice.
+ */
 function checkWinner(pChoice, cChoice) {
 
     let player = pChoice.getAttribute("alt");
@@ -200,6 +209,9 @@ function checkWinner(pChoice, cChoice) {
 
 }
 
+/**
+ * Add score to player if player won the round.
+ */
 function addPlayerScore() {
 
     let playerScore = parseInt(document.getElementById("player-score").innerText);
@@ -211,6 +223,9 @@ function addPlayerScore() {
 
 }
 
+/**
+ * Add score to computer if player won the round.
+ */
 function addComputerScore() {
 
     let computerScore = parseInt(document.getElementById("computer-score").innerText);
@@ -222,34 +237,59 @@ function addComputerScore() {
 
 }
 
+/**
+ * Stop the game if player got score 10 before computer in time.
+ */
 function endPlayerGame() {
 
-    // clearInterval(timerPlace);
+    clearInterval(timer);
     document.getElementsByClassName("comparing-score")[0].style.display = "none";
-    document.getElementById("timer").remove();
+    document.getElementById("timer").style.display = "hide";
     document.getElementsByTagName("body")[0].style.backgroundColor = "#d6f4d6";
     document.getElementsByTagName("h2")[0].innerHTML = "<h2>Congratulations, you won the game!</h2>";
     document.getElementsByClassName("player-weapon")[0].innerHTML = "Live long and prosper!<br>New game will start shortly.";
     setTimeout(function () {
         location.reload();
-    }, 6000);
+    }, 2000);
 
 }
 
+/**
+ * Stop the game if computer got score 10 before player in time.
+ */
 function endComputerGame() {
 
-    // clearInterval(timerPlace);
+    clearInterval(timer);
     document.getElementsByClassName("comparing-score")[0].style.display = "none";
-    document.getElementById("timer").remove();
+    document.getElementById("timer").style.display = "hide";
     document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4";
     document.getElementsByTagName("h2")[0].innerHTML = "<h2>You lose the game!</h2>";
     document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly.";
     setTimeout(function () {
         location.reload();
-    }, 6000);
+    }, 2000);
 
 }
 
+/**
+ * Stop the game if time's up and nobody got score 10 in time.
+ */
+function timeIsUp() {
+
+    document.getElementsByClassName("comparing-score")[0].style.display = "none";
+    document.getElementById("timer").style.display = "hide";
+    document.getElementsByTagName("h2")[0].innerHTML = "<h2>Time's up!</h2>";
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4";
+    document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly.";
+    setTimeout(function () {
+        location.reload();
+    }, 2000);
+
+}
+
+/**
+ * Countdown till game ends.
+ */
 function timer() {
 
     let time = parseInt(document.getElementById("timer").innerText);
@@ -265,17 +305,4 @@ function timer() {
         }, 1000);
 
     }
-}
-
-function timeIsUp() {
-
-    document.getElementsByClassName("comparing-score")[0].style.display = "none";
-    document.getElementById("timer").remove();
-    document.getElementsByTagName("h2")[0].innerHTML = "<h2>Time's up!</h2>";
-    document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4";
-    document.getElementsByClassName("player-weapon")[0].innerHTML = "Try again!<br>New game will start shortly.";
-    setTimeout(function () {
-        location.reload();
-    }, 6000);
-
 }
