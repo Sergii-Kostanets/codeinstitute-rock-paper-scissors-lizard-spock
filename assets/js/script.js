@@ -222,6 +222,7 @@ function addComputerScore() {
 
 function endPlayerGame() {
 
+    clearInterval(timer);
     document.getElementsByClassName("comparing-score")[0].style.display = "none";
     document.getElementById("timer").remove();
     document.getElementsByTagName("body")[0].style.backgroundColor = "#d6f4d6";
@@ -235,6 +236,7 @@ function endPlayerGame() {
 
 function endComputerGame() {
 
+    clearInterval(timer);
     document.getElementsByClassName("comparing-score")[0].style.display = "none";
     document.getElementById("timer").remove();
     document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4";
@@ -249,15 +251,18 @@ function endComputerGame() {
 function timer() {
 
     let time = parseInt(document.getElementById("timer").innerText);
-    let timer = setInterval(function(){
-        time--;
-        document.getElementById("timer").textContent = time;
-        if (time <= 0) {
-            clearInterval(timer);
-            timeIsUp();
-        }
-    }, 1000);
+    if (time > 0 || time === true) {
 
+        let timer = setInterval(function(){
+            time--;
+            document.getElementById("timer").innerHTML = time;
+            if (time <= 0) {
+                clearInterval(timer);
+                timeIsUp();
+            }
+        }, 1000);
+
+    }
 }
 
 function timeIsUp() {
