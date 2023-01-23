@@ -1,3 +1,5 @@
+let timerPlace = document.getElementById("timer");
+
 document.addEventListener("DOMContentLoaded", function () {
 
     let buttons = document.getElementsByTagName("button");
@@ -222,7 +224,7 @@ function addComputerScore() {
 
 function endPlayerGame() {
 
-    clearInterval(timer);
+    // clearInterval(timerPlace);
     document.getElementsByClassName("comparing-score")[0].style.display = "none";
     document.getElementById("timer").remove();
     document.getElementsByTagName("body")[0].style.backgroundColor = "#d6f4d6";
@@ -236,7 +238,7 @@ function endPlayerGame() {
 
 function endComputerGame() {
 
-    clearInterval(timer);
+    // clearInterval(timerPlace);
     document.getElementsByClassName("comparing-score")[0].style.display = "none";
     document.getElementById("timer").remove();
     document.getElementsByTagName("body")[0].style.backgroundColor = "#ffd4d4";
@@ -253,11 +255,11 @@ function timer() {
     let time = parseInt(document.getElementById("timer").innerText);
     if (time > 0 || time === true) {
 
-        let timer = setInterval(function(){
+        let timerValue = setInterval(function(){
             time--;
-            document.getElementById("timer").innerHTML = time;
+            timerPlace.innerHTML = time;
             if (time <= 0) {
-                clearInterval(timer);
+                clearInterval(timerValue);
                 timeIsUp();
             }
         }, 1000);
