@@ -47,7 +47,7 @@ function runGame(weaponType) {
 }
 
 /**
- * Compearing choices of player and computer and shows result of the round.
+ * Comparing choices of player and computer and shows result of the round.
  * @param {*} pChoice - player choice.
  * @param {*} cChoice - computer choice.
  */
@@ -293,8 +293,8 @@ function timeIsUp() {
  */
 function timer() {
     let time = parseInt(document.getElementById("timer").innerText);
-    let playerScore = parseInt(document.getElementById('player-score').innerText)
-    let computerScore = parseInt(document.getElementById('computer-score').innerText)
+    let playerScore = parseInt(document.getElementById('player-score').innerText);
+    let computerScore = parseInt(document.getElementById('computer-score').innerText);
 
     if (time === 30 && playerScore === 0 && computerScore === 0) {
 
