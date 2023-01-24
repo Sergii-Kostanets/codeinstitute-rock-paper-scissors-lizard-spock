@@ -301,7 +301,7 @@ function timer() {
         timerValue = setInterval(function () {
             time--;
             timerPlace.innerHTML = time;
-            if (time <= 0) {
+            if (time < 0) {
                 clearInterval(timerValue);
                 timeIsUp();
             }
